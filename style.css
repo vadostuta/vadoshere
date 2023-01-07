@@ -41,3 +41,7 @@ header, section {
 .crossed {
   text-decoration: line-through;
 }
+
+.lp-list li {
+  margin-bottom: 10px;
+}
