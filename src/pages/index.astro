@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Footer from "../components/Footer.astro";
+import Other from "../components/Other.astro";
+import Contact from "../components/Contact.astro";
+import Header from "../components/Header.astro";
+import ProfileImage from "../components/ProfileImage.astro";
+
+const content = "vadoshere; super fancy portfolio (not)";
+const title = "vadoshere";
+---
+
+<Layout title={title} description={content}>
+	<div class="main">
+		<ProfileImage />
+
+		<div class="main-layout">
+			<Header />
+			<Contact />
+			<Other />
+		</div>
+	</div>
+	<Footer />
+</Layout>
+
+<style>
+	.main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding-top: 60px;
+	}
+
+	@media (max-width: 1120px) {
+		.main-layout {
+			padding: 0 40px;
+		}
+		.main {
+			padding-top: 30px;
+		}
+	}
+
+	@media (max-width: 835px) {
+		.main {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.main :global(ul) {
+		list-style-type: none;
+		padding-left: 40px;
+	}
+
+	.main :global(ul li) {
+		margin-bottom: 10px;
+	}
+
+	.main-layout {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+</style>

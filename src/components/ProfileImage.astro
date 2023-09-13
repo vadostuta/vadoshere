@@ -1,0 +1,32 @@
+---
+import profileImage from "../assets/images/profile.webp";
+---
+
+<!-- TODO: image in compoentn and change in load? -->
+<div class="image-box">
+    <img
+        src={profileImage.src}
+        width="500"
+        height="667"
+        alt="profile picture"
+        role="img"
+    />
+</div>
+
+<style>
+    .image-box {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .image-box img {
+        max-width: 100%;
+    }
+
+    @media (max-width: 950px) {
+        .image-box img {
+            width: 400px;
+            height: 100%;
+        }
+    }
+</style>
