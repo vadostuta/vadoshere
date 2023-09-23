@@ -16,11 +16,19 @@ import profileImage from "../assets/images/profile.webp";
 <style>
     .image-box {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
+        padding-right: 40px;
     }
 
     .image-box img {
         max-width: 100%;
+    }
+
+    @media (max-width: 1150px) {
+        .image-box {
+            padding-right: 0;
+            justify-content: space-around;
+        }
     }
 
     @media (max-width: 950px) {
@@ -28,5 +36,10 @@ import profileImage from "../assets/images/profile.webp";
             width: 400px;
             height: 100%;
         }
+    }
+    @media (max-width: 500px) {
+        justify-content: start;
+        padding-left: 10px;
+        margin-bottom: 10px;
     }
 </style>
