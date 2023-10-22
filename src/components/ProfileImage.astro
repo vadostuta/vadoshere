@@ -1,13 +1,14 @@
 ---
-import profileImage from "../assets/images/profile.webp";
+const images = await Astro.glob("../../public/images/profile/*.webp");
+const maxImagesNumber = images.length;
+
+const getRandomImageNumber = () =>
+    Math.floor(Math.random() * (maxImagesNumber - 1 + 1)) + 1;
 ---
 
-<!-- TODO: image in compoentn and change in load? -->
 <div class="image-box">
     <img
-        src={profileImage.src}
-        width="500"
-        height="667"
+        src={`/images/profile/${getRandomImageNumber()}.webp`}
         alt="profile picture"
         role="img"
     />
@@ -15,31 +16,27 @@ import profileImage from "../assets/images/profile.webp";
 
 <style>
     .image-box {
+        padding: 0 0 0 130px;
         display: flex;
-        justify-content: flex-end;
-        padding-right: 40px;
+        align-items: center;
+        justify-content: center;
     }
-
     .image-box img {
-        max-width: 100%;
+        max-width: 80%;
     }
 
-    @media (max-width: 1150px) {
+    @media (max-width: 1200px) {
         .image-box {
-            padding-right: 0;
-            justify-content: space-around;
+            padding: 0 60px;
+        }
+        .image-box img {
+            max-width: 100%;
         }
     }
 
-    @media (max-width: 950px) {
-        .image-box img {
-            width: 400px;
-            height: 100%;
+    @media (max-width: 900px) {
+        .image-box {
+            align-items: flex-start;
         }
-    }
-    @media (max-width: 500px) {
-        justify-content: start;
-        padding-left: 10px;
-        margin-bottom: 10px;
     }
 </style>
