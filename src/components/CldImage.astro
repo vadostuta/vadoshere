@@ -1,4 +1,31 @@
 ---
+// const maxImagesNumber = images.length;
+
+// const getIndexArrayOfImages = () => {
+//     let index = maxImagesNumber;
+//     let gav = [];
+
+//     while (index !== 0) {
+//         gav.push(index);
+//         index--;
+//     }
+
+//     return gav;
+// };
+
+// const array = getIndexArrayOfImages();
+// localStorage.setItem("indexArrayOfImages", JSON.stringify(array));
+
+// const getRandomImageNumber = (myArray) =>
+//   Math.floor(Math.random() * myArray.length + 1);
+
+// const randomNumber = getRandomImageNumber(array)
+
+// const arrayIndex = array.findIndex(el => el === randomNumber)
+// console.log(array)
+// const imageIndex = array.splice(arrayIndex, 1)
+// console.log(imageIndex)
+
 import { Cloudinary } from "@cloudinary/url-gen";
 import { Image } from "astro:assets";
 
@@ -27,14 +54,7 @@ interface Props {
 }
 ---
 
-<Image
-    src={cldSrc.toURL()}
-    loading="eager"
-    width="500"
-    height="660"
-    quality="100"
-    {...props}
-/>
+<Image src={cldSrc.toURL()} loading="eager" inferSize {...props} />
 
 <style>
     img {
