@@ -1,8 +1,7 @@
 ---
-import lpImage from "../assets/images/lp.webp";
-
 import Layout from "../layouts/Layout.astro";
 import BackToMain from "../components/BackToMain.astro";
+import CldImage from "../components/CldImage.astro";
 
 const content = "licence plate";
 const title = "vadoshere | права";
@@ -13,7 +12,7 @@ export const prerender = true;
 <Layout title={title} description={content}>
     <div class="lp">
         <div class="image-box">
-            <img src={lpImage.src} alt="article image" width="500" role="img" />
+            <CldImage src="vadoshere/lp_eti0ch" alt="article image" />
         </div>
 
         <article class="lp-layout">
@@ -232,6 +231,7 @@ export const prerender = true;
     .image-box {
         display: flex;
         justify-content: space-around;
+        width: 500px;
     }
 
     .image-box img {
