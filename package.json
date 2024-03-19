@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^3.0.3",
-    "@astrojs/node": "^6.0.3",
+    "@astrojs/netlify": "^5.2.0",
+    "@astrojs/node": "^8.2.4",
     "@cloudinary/url-gen": "^1.19.0",
-    "astro": "^3.0.13"
+    "astro": "^4.5.6"
   }
 }

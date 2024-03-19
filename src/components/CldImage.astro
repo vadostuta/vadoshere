@@ -1,5 +1,6 @@
 ---
 import { Cloudinary } from "@cloudinary/url-gen";
+import { Image } from "astro:assets";
 
 const cld = new Cloudinary({
     cloud: {
@@ -26,7 +27,13 @@ interface Props {
 }
 ---
 
-<img src={cldSrc.toURL()} loading={loading} {...props} role="img" />
+<Image
+    src={cldSrc.toURL()}
+    loading="eager"
+    width="500"
+    height="800"
+    {...props}
+/>
 
 <style>
     img {
